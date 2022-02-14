@@ -1,0 +1,56 @@
+version: '3'
+services:
+
+  web:
+    container_name: nginx
+    image: nginx:1.20
+    volumes:
+      - "$PWD/nginx/default.conf:/etc/nginx/conf.d/default.conf"
+      - "$PWD/web:/var/www/html"
+    ports:
+      - "80:80"
+    environment:
+      - NGINX_HOST=localhost
+    command: /bin/sh -c "envsubst 'localhost' < /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+    restart: always
+    links:
+    - php
+    - wordpress_db
+    depends_on:
+      - php
+      - wordpress_db
+  
+  php:
+    container_name: php
+    image: php:7.4
+    build: 
+      context: php
+    volumes:
+      - "$PWD/web:/var/www/html"
+    networks:
+      - net
+
+  wordpress:
+    image: wordpress
+    links:
+      - wordpress_db:mysql
+    ports:
+      - 8080:80
+    volumes:
+    - "$PWD/wp_html:/var/www/html"
+  wordpress_db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: examplepass
+  phpmyadmin:
+    image: corbinu/docker-phpmyadmin
+    links:
+      - wordpress_db:mysql
+    ports:
+      - 8181:80
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: examplepass
+networks: 
+  net:
+
