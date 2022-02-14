@@ -32,7 +32,7 @@ $ docker ps
 <img src="./images/Wordpress.PNG">
 
 ```bash
-$ credentals
+credentals
 $ environment:
       MYSQL_USERNAME: root
       MYSQL_ROOT_PASSWORD: examplepass
