@@ -25,3 +25,15 @@ $ docker-compose up -d
 $ docker ps 
 ```
 <img src="./images/docker.PNG">
+
+## Check your dockers 
+
+<img src="./images/phpmyadmin.PNG">
+<img src="./images/Wordpress.PNG">
+
+```bash
+$ credentals
+$ environment:
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: examplepass
+```
