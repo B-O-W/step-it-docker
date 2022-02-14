@@ -13,7 +13,7 @@ It also assumes that you are familiar with the normal docker up/build workflow.
 
 To start using you will need:
 
-- it is necessary that port 80 is not used
+- it is necessary that port 80,8080,8181 is not used
 - to download docker/docker-compass
 - and packages like live docker docker-compass
 - and the dockerfile will do the rest
