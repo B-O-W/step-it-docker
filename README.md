@@ -18,7 +18,7 @@ To start using you will need:
 - and packages like live docker docker-compass
 - and the dockerfile will do the rest
 
-## Configure AWS
+## Configure Docker
 
 ```bash
 $ docker-compose up -d 
