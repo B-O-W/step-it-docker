@@ -20,6 +20,13 @@ To start using you will need:
 
 ## Configure Docker
 
+Copy the example environment into `.env`
+
+```
+cp env.example .env
+```
+Edit the `.env` file to change the default IP address, MySQL root password and WordPress database name.
+
 ```bash
 $ docker-compose up -d 
 $ docker ps 
@@ -30,10 +37,3 @@ $ docker ps
 
 <img src="./images/phpmyadmin.PNG">
 <img src="./images/Wordpress.PNG">
-
-```bash
-credentals
-$ environment:
-      MYSQL_USERNAME: root
-      MYSQL_ROOT_PASSWORD: examplepass
-```
