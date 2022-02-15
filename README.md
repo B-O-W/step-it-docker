@@ -13,7 +13,7 @@ It also assumes that you are familiar with the normal docker up/build workflow.
 
 To start using you will need:
 
-- it is necessary that port 80,8080,8181 is not used
+- it is necessary that port 80(wordpress),8080(phpmyadmin),8181(nginx) is not used
 - to download docker/docker-compass
 - and packages like live docker docker-compass
 - and the dockerfile will do the rest
@@ -37,6 +37,7 @@ $ docker ps
 
 <img src="./images/phpmyadmin.PNG">
 <img src="./images/Wordpress.PNG">
+<img src="./images/nginx.PNG">
 
 ## Usage
 
